@@ -18,6 +18,7 @@ const onSignUp = function (event) {
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
 }
+
 const onLogIn = function (event) {
   event.preventDefault()
   const form = event.target
@@ -27,7 +28,33 @@ const onLogIn = function (event) {
     .catch(ui.logInFailure)
 }
 
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
+const onUserInfoClicked = function (event) {
+  event.preventDefault()
+  const button = event.target
+  ui.userInfoButtonPressed(button)
+}
+
+const onSignOut = function (event) {
+  event.preventDefault()
+
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 module.exports = {
   onSignUp,
-  onLogIn
+  onLogIn,
+  onChangePassword,
+  onUserInfoClicked,
+  onSignOut
 }

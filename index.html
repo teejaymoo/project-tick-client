@@ -13,16 +13,41 @@
     </head>
 
     <body>
-      <main>
+      <main id="main">
+        <section id="Whole-user-info">
+          <header>
 
-        <h2>Please Sign up</h2>
+            <div class="container" id="main-header">
+              <button id="user-info-button">User Info</button>
+            </div>
+            <div class="container" id="user-info-container" >
+              <div class="row" >
+                <div class="col" id="user-record">
+                  <div class="col" id="record-box">record</div>
+                    <form id="form-change-password">
+                      <input class="col" autocomplete="on" spellcheck="true" name="passwords[old]" type="password" placeholder="Enter Current Password" required>
+                      <input class="col" autocomplete="on" spellcheck="true" name="passwords[new]" type="password" placeholder="Enter New Password" required>
+                      <button id="save-changes">Save Changes</button>
+                    </form>
+                    <form>
+                      <button id="sign-out-button">Sign Out</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+
+          </header>
+        </section>
+        <h2>Sign up or Login, Please.</h2>
         <section id="Users-auth">
           <div class="container" id="sign-up-container" >
             <div class="row" >
               <form id="form-sign-up" >
                 <input class="col" name="credentials[email]" type="text" placeholder="Enter Email" required>
-                <input class="col" name="credentials[password]" type="password"  placeholder="Enter Password" required>
-                <input class="col" name="credentials[password_confirmation]" type="password"  placeholder="Confirm Password" required>
+                <input class="col" id="sign-up-pw" name="credentials[password]" type="password"  placeholder="Enter Password" required>
+                <i class="eye-showpw" onClick="showPw('sign-up-pw', 'this')"></i>
+                <input class="col" id="sign-up-confirm-pw" name="credentials[password_confirmation]" type="password"  placeholder="Confirm Password" required>
+                <i class="eye-showpw" onClick="showPw('sign-up-confirm-pw', 'this')"></i>
                 <button class="sign-up-button">Sign Up</button>
               </form>
             </div>
@@ -32,36 +57,34 @@
             <div class="row" >
               <form id="form-login">
                 <input class="col" autocomplete="on" spellcheck="true" name="credentials[email]" type="text" placeholder="Enter Email" required>
-                <input class="col" autocomplete="on" spellcheck="true" name="credentials[password]" type="password" placeholder="Enter Password" required>
+                <input class="col" autocomplete="on" spellcheck="true" id="logIn-pw" name="credentials[password]" type="password" placeholder="Enter Password" required>
+                <i class="eye-showpw" onClick="showPw('logIn-pw', 'this')"></i>
                 <button class="login-button">Login</button>
               </form>
             </div>
           </div>
 
-          <div class="container" id="user-info-container" >
+          <section id="display-message">
+              <!-- These divs are initially empty but we will fill them with success or failure message-->
+              <div id="message"></div>
+          </section>
+       </section>
+
+
+       <section id="game-board">
+          <div class="container" id="tic-tac-toe-box">
             <div class="row" >
-              <form id="form-user-info">
-                <button id="user-info-button">User Info</button>
-              </form>
-              <div class="col" id="user-record">
-
-
-
-                <form id="form-change-password">
-                  <input class="col" autocomplete="on" spellcheck="true" name="passwords[old]" type="password" placeholder="Enter Current Password" required>
-                  <input class="col" autocomplete="on" spellcheck="true" name="passwords[new]" type="password" placeholder="Enter New Password" required>
-                  <button id="save-changes">Save Changes</button>
-                </form>
-                <button id="sign-out-button">Sign Out</button>
-              </div>
+              <div class="col-lg-4">One of three columns</div>
+              <div class="col-lg-4">One of three columns</div>
+              <div class="col-lg-4">One of three columns</div>
+              <div class="col-lg-4">One of three columns</div>
+              <div class="col-lg-4">One of three columns</div>
+              <div class="col-lg-4">One of three columns</div>
+              <div class="col-lg-4">One of three columns</div>
+              <div class="col-lg-4">One of three columns</div>
+              <div class="col-lg-4">One of three columns</div>
             </div>
           </div>
-
-        <section id="display-message">
-            <!-- These divs are initially empty but we will fill them with success or failure message-->
-            <div id="message"></div>
-        </section>
-
         </section>
       </main>
     </body>
