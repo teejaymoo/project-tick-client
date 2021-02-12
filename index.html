@@ -5,13 +5,64 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="shortcut icon" type="image/x-icon" href="https://scontent-msp1-1.xx.fbcdn.net/v/t1.0-9/136683465_5225570904134591_2187577914123122930_o.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=pls-Jplu9xYAX-zU1Tp&_nc_ht=scontent-msp1-1.xx&oh=3b92fb3346b8069cd756426ccf23b3b6&oe=604B9BFC">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+      <main>
+
+        <h2>Please Sign up</h2>
+        <section id="Users-auth">
+          <div class="container" id="sign-up-container" >
+            <div class="row" >
+              <form id="form-sign-up" >
+                <input class="col" name="credentials[email]" type="text" placeholder="Enter Email" required>
+                <input class="col" name="credentials[password]" type="password"  placeholder="Enter Password" required>
+                <input class="col" name="credentials[password_confirmation]" type="password"  placeholder="Confirm Password" required>
+                <button class="sign-up-button">Sign Up</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="container" id="login-container" >
+            <div class="row" >
+              <form id="form-login">
+                <input class="col" autocomplete="on" spellcheck="true" name="credentials[email]" type="text" placeholder="Enter Email" required>
+                <input class="col" autocomplete="on" spellcheck="true" name="credentials[password]" type="password" placeholder="Enter Password" required>
+                <button class="login-button">Login</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="container" id="user-info-container" >
+            <div class="row" >
+              <form id="form-user-info">
+                <button id="user-info-button">User Info</button>
+              </form>
+              <div class="col" id="user-record">
+
+
+
+                <form id="form-change-password">
+                  <input class="col" autocomplete="on" spellcheck="true" name="passwords[old]" type="password" placeholder="Enter Current Password" required>
+                  <input class="col" autocomplete="on" spellcheck="true" name="passwords[new]" type="password" placeholder="Enter New Password" required>
+                  <button id="save-changes">Save Changes</button>
+                </form>
+                <button id="sign-out-button">Sign Out</button>
+              </div>
+            </div>
+          </div>
+
+        <section id="display-message">
+            <!-- These divs are initially empty but we will fill them with success or failure message-->
+            <div id="message"></div>
+        </section>
+
+        </section>
+      </main>
     </body>
 </html>

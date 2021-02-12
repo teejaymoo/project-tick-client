@@ -1,129 +1,54 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Project-Tick: A Tic-Tac-Toe Game
 
-# browser-template
-
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
-
-## Installation
-
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `sei/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `teejaymoo.project-tick` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
-
-## Structure
-
-### Scripts
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-### Config
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
+Welcome! This is Tic Tac Toe.
 
 
-## Additional Resources
+### Rules/Instructions for anyone who has never played a tic-tac-toe game
+This Tic Tac Toe is played on a 3 by 3 grid.
+The goal of Tic Tac Toe is to get three in a row (vertically, horizontally and diagonal). The first player is known as X and the second is O. Players will take turn placing their marks on the game board until either player has three in a row.
+If the game board is filled up with no winners, this will result as a draw match.
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
 
-## [License](LICENSE)
+>"Why would you build this simple game?" You asked..
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+Various technologies will be used in this "simple game"; jQuery, Bootstrap, Javascript, HTML/CSS(SASS), along with working a API.
+
+This isn't just a console-type Tic Tac Toe that you can whip on IDE.
+
+## Design details:
+-First slide will be a welcoming sign and rules of the game.
+
+-After that, this will push us to the main page of the game that will prompt you to sign-in/sign-up along with a feature of signing in as a guest.
+
+-Main page will have a header of a press start button on the left corner, tic tac toe name and a button for user info.
+
+-Press start will assign the user to x and then rotate if the user restarts the game.
+
+-Within user info there will be the user record, ability to change password and a sign out option. (maybe include calculation of win rate - total games played win/loss/draw
+
+The body will be made up of a large box - bootstrap grid box col-4 lg md and default for the board. On the right side, there will be 3 boxes that will be keeping track of scores, one for draw and the other 2 for players.
+
+-Once a game is over there will a prompt, showing the winner or draw match along with "play again" option.
+
+-If play again is chosen, empty the board, update and keep the score.
+
+-If no is selected, it will prompt the user if they want to sign out and quit.
+
+
+## Game engine
+
+-Create a board
+-Handler for an unavailable spot.
+-Need to have check wins for horizontal, vertical and diagonal, as well as draw.
+-Need to declare a draw or winner.
+
+## Wireframe
+
+First draft, keeping main/game page along with the "restart/play again prompt"
+![alt](https://i.imgur.com/0uWnItN.jpeg)
+
+Prompt of rules along with Updated sign in/sign up slide, background will be transparent like.
+![alt](https://i.imgur.com/Pn1F4Vn.jpg)
+
+User-Info button
+![alt](https://i.imgur.com/LRQtRFW.jpeg)
