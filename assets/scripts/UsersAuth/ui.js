@@ -14,6 +14,7 @@ const signUpSuccess = function (response) {
 const signUpFailure = function (response) {
   $('#message').removeClass()
   $('#message').addClass('failure')
+  $('#message').show()
   $(document).ready(function () {
     $('#message').text(errorMessage).fadeIn('slow', function () {
       $('#message').delay(2000).fadeOut()
@@ -25,10 +26,11 @@ const signUpFailure = function (response) {
 const logInSuccess = function (response) {
   // storing my user info (id,email,username) into response
   store.user = response.user
-  // function to fade the "Login successful message" after 2 seconds
+
   $('#message').removeClass()
   $('#message').addClass('success')
   $(document).ready(function () {
+    // function to fade the "Login successful message" after 2 seconds
     $('#message').text('Login Successful!').fadeIn('fast', function () {
       $('#message').delay(2000).fadeOut()
     })
@@ -39,6 +41,7 @@ const logInSuccess = function (response) {
   $('#Users-auth').hide()
   $('#Whole-user-info').hide()
   $('#header-container').show()
+  $('#user-info-button').show()
 }
 
 const logInFailure = function (response) {
@@ -51,9 +54,10 @@ const logInFailure = function (response) {
   })
 }
 
-const changePasswordSuccess = function (response) {
+const changePasswordSuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#message').show()
   $(document).ready(function () {
     $('#message').text('Password updated!').fadeIn('fast', function () {
       $('#message').delay(2000).fadeOut()
@@ -65,12 +69,12 @@ const changePasswordSuccess = function (response) {
 const changePasswordFailure = function () {
   $('#message').removeClass()
   $('#message').addClass('failure')
-  $('#message').text('Sorry, attempt to change password has failed.')
   $(document).ready(function () {
     $('#message').text(errorMessage).fadeIn('fast', function () {
       $('#message').delay(2000).fadeOut()
     })
   })
+  $('#form-change-password').trigger('reset')
 }
 
 const signOutSuccess = function () {

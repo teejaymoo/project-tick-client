@@ -52,3 +52,4 @@ Prompt of rules along with Updated sign in/sign up slide, background will be tra
 
 User-Info button
 ![alt](https://i.imgur.com/LRQtRFW.jpeg)
+# project-tick-client

@@ -18,16 +18,12 @@ const newGame = function (event) {
 
 const onUserInfoClicked = function () {
   event.preventDefault()
-  $('#game-board').hide()
-  $('#header-container').hide()
-  $('#user-info-container').show()
-  $('#back-button').show()
+  ui.userInfo()
 }
 
-const onBackPressed = function (event) {
+const onBackButtonPressed = function (event) {
   event.preventDefault()
-  const button = event.target
-  ui.userBackPressed(button)
+  ui.backButtonPressed()
 }
 
 const onViewGames = function (event) {
@@ -51,7 +47,7 @@ module.exports = {
   onViewGames,
   onCloseViewGames,
   pressStart,
-  onBackPressed,
+  onBackButtonPressed,
   onUserInfoClicked,
   onCellClicked,
   newGame

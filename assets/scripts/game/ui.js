@@ -15,15 +15,24 @@ const viewGames = function (data) {
 }
 
 const newGameButtonPressed = function () {
+  $('#games-display').hide()
   $('#game-board').show()
 }
 
-const userBackPressed = function () {
+const backButtonPressed = function () {
   $('#user-info-container').hide()
-  $('#user-back-button').hide()
-  $('#new-game').hide()
-  $('#continue-game').hide()
-  $('#press-start-button').show()
+  $('#back-button').hide()
+  $('#ask-game').hide()
+  $('#user-info-button').show()
+  $('#header-container').show()
+}
+
+const userInfo = function () {
+  $('#game-board').hide()
+  $('#header-container').hide()
+  $('#user-info-button').hide()
+  $('#user-info-container').show()
+  $('#back-button').show()
 }
 
 const onErr = function () {
@@ -35,5 +44,6 @@ module.exports = {
   onErr,
   newGameButtonPressed,
   viewGames,
-  userBackPressed
+  backButtonPressed,
+  userInfo
 }

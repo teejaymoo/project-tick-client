@@ -1,4 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'variable';
+
+body {
+ background-color: $color-scheme;
+}
 
 #header-container {
   display: none;
@@ -13,11 +18,14 @@
   display: none;
 }
 
+#user-info-button {
+  display: none;
+}
+
 
 #user-info-container {
   display: none;
   border: 1px solid;
-
 }
 
 #game-section {
@@ -30,6 +38,16 @@
 
 #form-sign-up, #form-login {
   margin: 10px 0px 0px 0px;
+}
+
+.success {
+  color: #F7E0D4;
+  font-size: 25px;
+}
+
+.failure {
+  color: #FC600A;
+  font-size: 25px;
 }
 
 .col {
@@ -45,7 +63,7 @@
 }
 
 .cells {
-  background: darkGoldenRod;
+  background: $color-scheme-tint;
   display: flex;
   justify-content: center;
   align-items: center;

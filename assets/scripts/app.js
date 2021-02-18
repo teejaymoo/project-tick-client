@@ -8,7 +8,6 @@ const gameEvents = require('./game/events')
 // require('./example')
 const cells = document.querySelectorAll('.cells')
 
-
 $(() => {
   for (const cell of cells) {
     $(cell).on('click', gameEvents.onCellClicked)
@@ -28,9 +27,9 @@ $(() => {
 
   $('#form-change-password').on('submit', usersAuthEvents.onChangePassword)
 
-  $('#user-info-button').on('click', usersAuthEvents.onUserInfoClicked)
+  $('#user-info-button').on('click', gameEvents.onUserInfoClicked)
 
-  $('#back-button').on('click', usersAuthEvents.onBackPressed)
+  $('#back-button').on('click', gameEvents.onBackButtonPressed)
 
   $('#sign-out-button').on('submit', usersAuthEvents.onSignOut)
 })

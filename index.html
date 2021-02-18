@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="https://scontent-msp1-1.xx.fbcdn.net/v/t1.0-9/136683465_5225570904134591_2187577914123122930_o.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=pls-Jplu9xYAX-zU1Tp&_nc_ht=scontent-msp1-1.xx&oh=3b92fb3346b8069cd756426ccf23b3b6&oe=604B9BFC">
+      <link rel="shortcut icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/7k1wSfnstoNib_lmlfIfFTcHOE4oypb-mmuzvhPLpfFRz55CnNJFagyd6u6G4fFrlDI=s180-rw">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -24,12 +24,12 @@
                     <button id="view-games">View Games</button>
                     <button id="close-view-games">Close view Games</button>
                   </div>
-                  <div>
-                    <button id="user-info-button">User Info</button>
-                    <button id="back-button">Back to Main</button>
-                  </div>
                   <div id="games-display"></div>
               </div>
+            </div>
+            <div>
+              <button id="user-info-button">User Info</button>
+              <button id="back-button">Back to Main</button>
             </div>
 
 
@@ -38,8 +38,10 @@
                   <div class="col" id="user-record">
                     <div class="col" id="record-box">record</div>
                       <form id="form-change-password">
-                        <input class="col" autocomplete="on" spellcheck="true" name="passwords[old]" type="password" placeholder="Enter Current Password" required>
-                        <input class="col" autocomplete="on" spellcheck="true" name="passwords[new]" type="password" placeholder="Enter New Password" required>
+                        <input class="col" id="current-pw" autocomplete="on" spellcheck="true" name="passwords[old]" type="password" placeholder="Enter Current Password" required>
+                        <input type="checkbox" onclick="showPw('current-pw')">Show Password
+                        <input class="col" id="new-pw" autocomplete="on" spellcheck="true" name="passwords[new]" type="password" placeholder="Enter New Password" required>
+                        <input type="checkbox" onclick="showPw('new-pw')">Show Password<br>
                         <button id="save-changes">Save Changes</button>
                       </form>
                       <form>
@@ -56,12 +58,15 @@
               <form id="form-sign-up" >
                 <input class="col-6" name="credentials[email]" type="email" placeholder="Enter Email" required>
                 <input class="col-6" id="sign-up-pw" name="credentials[password]" type="password"  placeholder="Enter Password" required>
+                <input type="checkbox" onclick="showPw('sign-up-pw')">Show Password
                 <input class="col-6" id="sign-up-confirm-pw" name="credentials[password_confirmation]" type="password"  placeholder="Confirm Password" required>
+                <input type="checkbox" onclick="showPw('sign-up-confirm-pw')">Show Password
                 <button class="col-6 sign-up-button">Sign-Up</button>
               </form>
               <form id="form-login">
                 <input class="col-6" autocomplete="on" spellcheck="true" name="credentials[email]" type="email" placeholder="Enter Email" required>
-                <input class="col-6" autocomplete="on" spellcheck="true" id="logIn-pw" name="credentials[password]" type="password" placeholder="Enter Password" required>
+                <input class="col-6" id="logIn-pw"autocomplete="on" spellcheck="true" name="credentials[password]" type="password" placeholder="Enter Password" required>
+                <input type="checkbox" onclick="showPw('logIn-pw')">Show Password
                 <button class="col-6 login-button">Login</button>
               </form>
             </div>
@@ -92,5 +97,15 @@
           </div>
         </section>
       </main>
+      <script> // function making passwords visible
+      function showPw(password) {
+        var x = document.getElementById(password);
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+      </script>
     </body>
 </html>
