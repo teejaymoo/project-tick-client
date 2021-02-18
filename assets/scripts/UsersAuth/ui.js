@@ -1,17 +1,6 @@
 const store = require('./../store')
 const errorMessage = 'Something went wrong!'
 
-const showPw = function (id, el) {
-  const ident = document.getElementByTd(id)
-  if (ident.type === 'password') {
-    ident.type = 'text'
-    el.className = 'eye-showpw'
-  } else {
-    ident.type = 'password'
-    el.className = 'eye-showpw'
-  }
-}
-
 const signUpSuccess = function (response) {
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -44,14 +33,12 @@ const logInSuccess = function (response) {
       $('#message').delay(2000).fadeOut()
     })
   })
-
   $('#form-sign-up').hide()
   $('#form-login').hide()
   $('h2').hide()
-  $('#user-info-container').hide()
-  $('#Whole-user-info').show()
-  $('#main-header').show()
-  $('#game-board').show()
+  $('#Users-auth').hide()
+  $('#Whole-user-info').hide()
+  $('#header-container').show()
 }
 
 const logInFailure = function (response) {
@@ -60,16 +47,6 @@ const logInFailure = function (response) {
   $(document).ready(function () {
     $('#message').text(errorMessage).fadeIn('fast', function () {
       $('#message').delay(2000).fadeOut()
-    })
-  })
-}
-
-// when the user-info button is clicked, it will display the user info
-const userInfoButtonPressed = function (response) {
-// fuction to enable the 'click' and displaying some form of a drop down type effect.
-  $(document).ready(function () {
-    $('#user-info-button').click(function () {
-      $('#user-info-container').toggle()
     })
   })
 }
@@ -125,8 +102,6 @@ module.exports = {
   logInFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  userInfoButtonPressed,
-  showPw,
   signOutSuccess,
   signOutFailure
 }

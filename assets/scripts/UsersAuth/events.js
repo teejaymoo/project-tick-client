@@ -37,12 +37,6 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-const onUserInfoClicked = function (event) {
-  event.preventDefault()
-  const button = event.target
-  ui.userInfoButtonPressed(button)
-}
-
 const onSignOut = function (event) {
   event.preventDefault()
 
@@ -55,6 +49,5 @@ module.exports = {
   onSignUp,
   onLogIn,
   onChangePassword,
-  onUserInfoClicked,
   onSignOut
 }
