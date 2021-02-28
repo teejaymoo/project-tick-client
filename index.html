@@ -19,16 +19,14 @@
               <div class="row" >
                 <button id="press-start-button">Press START</button>
                   <div class="container" id="ask-game">
-                    <button id="new-game">New Game</button>
-                    <button id="continue-game">Continue Game</button>
-                    <button id="view-games">View Games</button>
-                    <button id="close-view-games">Close view Games</button>
+                    <button id="new-game">Play Game</button>
                   </div>
-                  <div id="games-display"></div>
               </div>
             </div>
             <div>
               <button id="user-info-button">User Info</button>
+              <button id="view-games">View Games</button>
+              <button id="close-view-games">Close view Games</button>
               <button id="back-button">Back to Main</button>
             </div>
 
@@ -72,38 +70,37 @@
             </div>
           </div>
 
-
-          <section id="display-message">
-              <!-- These divs are initially empty but we will fill them with success or failure message-->
-              <div id="message"></div>
-              <div id="game-display"></div>
-          </section>
+       </section>
+       <section id="display-message">
+           <!-- These divs are initially empty but we will fill them with success or failure message-->
+           <div id="message"></div>
+           <div id="game-display"></div>
        </section>
 
        <section id="game-board">
           <div class="container" id="tic-tac-toe-box">
             <div class="row" id="game-grid">
-              <div class="col-lg-12 col-md-12 col-12 cell"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-1"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-2"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-3"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-4"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-5"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-6"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-7"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-8"></div>
-              <div class="col-lg-4 col-md-4 col-4 cells box-9"></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='0'></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='1'></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='2'></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='3'></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='4'></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='5'></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='6'></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='7'></div>
+              <div class="col-lg-4 col-md-4 col-4 cell" data-id='8'></div>
+              <div class="col-md-12" id="game-message"></div>
             </div>
           </div>
         </section>
       </main>
       <script> // function making passwords visible
       function showPw(password) {
-        var x = document.getElementById(password);
-        if (x.type === "password") {
-          x.type = "text";
+        var pw = document.getElementById(password);
+        if (pw.type === "password") {
+          pw.type = "text";
         } else {
-          x.type = "password";
+          pw.type = "password";
         }
       }
       </script>

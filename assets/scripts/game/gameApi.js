@@ -1,30 +1,21 @@
 const config = require('../config')
 const store = require('./../store')
 
-const create = function (data) {
+const playGame = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data
+    data: ''
   })
 }
 
-const index = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
 
-const update = function (index, value, over) {
+const patchGame = function (index, value, over) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game._id,
+    url: config.apiUrl + `/games/${store.game._id}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -42,8 +33,7 @@ const update = function (index, value, over) {
 }
 
 module.exports = {
-  create,
-  index,
-  update
+  playGame,
+  patchGame
 
 }

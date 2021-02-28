@@ -3,6 +3,7 @@ const api = require('./api')
 // assigning my ui file to a variable to make the file accessible
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const gameApi = require('../game/gameApi')
 
 const onSignUp = function (event) {
   // prevent page to refresh on us
@@ -45,9 +46,41 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const pressStart = function () {
+  $('#ask-game').show()
+}
+
+const onUserInfoClicked = function () {
+  event.preventDefault()
+  ui.userInfo()
+}
+
+const onBackButtonPressed = function (event) {
+  event.preventDefault()
+  ui.backButtonPressed()
+}
+
+const onViewGames = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.index(data)
+    .then(ui.viewGames)
+    .catch(ui.onErr)
+}
+const onCloseViewGames = function () {
+  event.preventDefault()
+  $('#display-message').hide()
+}
+
 module.exports = {
   onSignUp,
   onLogIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onViewGames,
+  onCloseViewGames,
+  pressStart,
+  onBackButtonPressed,
+  onUserInfoClicked
 }

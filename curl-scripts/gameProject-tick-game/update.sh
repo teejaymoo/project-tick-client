@@ -7,7 +7,7 @@ curl "https://tic-tac-toe-api-development.herokuapp.com/games/${ID}" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
     "game": {
-      "cell": {
+      "cells": {
         "index": "'"${INDEX}"'",
         "value": "'"${VALUE}"'"
       },

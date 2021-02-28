@@ -99,6 +99,45 @@ const signOutFailure = function () {
   })
 }
 
+const viewGames = function (response) {
+  const games = response.games
+  let gamesHtml = ''
+  games.forEach(game => {
+    gamesHtml += `
+      <h4>ID: ${game._id}</h4>
+      <p>Cells: ${game.cells}</p>
+      <p>Game over?: ${game.over}</p>
+    `
+  })
+  $('#game-display').html(gamesHtml)
+}
+
+const backButtonPressed = function () {
+  $('#user-info-container').hide()
+  $('#back-button').hide()
+  $('#ask-game').hide()
+  $('#close-view-games').hide()
+  $('#view-games').hide()
+  $('#user-info-button').show()
+  $('#header-container').show()
+}
+
+const userInfo = function () {
+  $('#game-board').hide()
+  $('#header-container').hide()
+  $('#user-info-button').hide()
+  $('#user-info-container').show()
+  $('#back-button').show()
+  $('#view-games').show()
+  $('#close-view-games').show()
+  $('#display-message').show()
+}
+
+const onErr = function () {
+  // If an error occurs, select the #error-message element
+  $('#message').html(errorMessage)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -107,5 +146,9 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  onErr,
+  viewGames,
+  backButtonPressed,
+  userInfo
 }

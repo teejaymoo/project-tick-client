@@ -5,6 +5,13 @@ body {
  background-color: $color-scheme;
 }
 
+#view-games{
+  display: none;
+}
+#close-view-games{
+  display: none;
+}
+
 #header-container {
   display: none;
   margin: 10px 0px 0px 0;
@@ -40,13 +47,8 @@ body {
   margin: 10px 0px 0px 0px;
 }
 
-.success {
+#game-message {
   color: #F7E0D4;
-  font-size: 25px;
-}
-
-.failure {
-  color: #FC600A;
   font-size: 25px;
 }
 
@@ -62,7 +64,7 @@ body {
   border: 1px solid;
 }
 
-.cells {
+.cell {
   background: $color-scheme-tint;
   display: flex;
   justify-content: center;

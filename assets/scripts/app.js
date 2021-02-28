@@ -3,23 +3,18 @@
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 const usersAuthEvents = require('./UsersAuth/events')
-const gameEvents = require('./game/events')
+const gameEvents = require('./game/gameEvents')
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const cells = document.querySelectorAll('.cells')
 
 $(() => {
-  for (const cell of cells) {
-    $(cell).on('click', gameEvents.onCellClicked)
-  }
+  gameEvents.addHandlers()
 
-  $('#press-start-button').on('click', gameEvents.pressStart)
+  $('#press-start-button').on('click', usersAuthEvents.pressStart)
 
-  $('#new-game').on('click', gameEvents.newGame)
+  $('#view-games').on('click', usersAuthEvents.onViewGames)
 
-  $('#view-games').on('click', gameEvents.onViewGames)
-
-  $('#close-view-games').on('click', gameEvents.onCloseViewGames)
+  $('#close-view-games').on('click', usersAuthEvents.onCloseViewGames)
 
   $('#form-sign-up').on('submit', usersAuthEvents.onSignUp)
 
@@ -27,9 +22,9 @@ $(() => {
 
   $('#form-change-password').on('submit', usersAuthEvents.onChangePassword)
 
-  $('#user-info-button').on('click', gameEvents.onUserInfoClicked)
+  $('#user-info-button').on('click', usersAuthEvents.onUserInfoClicked)
 
-  $('#back-button').on('click', gameEvents.onBackButtonPressed)
+  $('#back-button').on('click', usersAuthEvents.onBackButtonPressed)
 
   $('#sign-out-button').on('submit', usersAuthEvents.onSignOut)
 })
