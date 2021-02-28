@@ -34,6 +34,11 @@ The body will be made up of a large box - bootstrap grid box col-4 lg md and def
 
 -If no is selected, it will prompt the user if they want to sign out and quit.
 
+## Unsolved problems
+
+- Few User interface glitches that still needs to be handled, Such as
+viewing and closing games played works only once. 
+
 
 ## Game engine
 
