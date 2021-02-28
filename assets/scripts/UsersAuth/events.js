@@ -3,7 +3,6 @@ const api = require('./api')
 // assigning my ui file to a variable to make the file accessible
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
-const gameApi = require('../game/gameApi')
 
 const onSignUp = function (event) {
   // prevent page to refresh on us
@@ -12,7 +11,6 @@ const onSignUp = function (event) {
   // get data from html form
   const form = event.target
   const data = getFormFields(form)
-  console.log('Data is :', data)
 
   // send data to api for sign up
   api.signUp(data)

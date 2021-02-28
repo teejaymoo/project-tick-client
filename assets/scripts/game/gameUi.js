@@ -4,19 +4,16 @@ const playGameSuccess = function (response) {
   $('#game-board').show()
 
   store.game = response.game
-  console.log('Data is :', response)
 }
 
 const patch = function (response) {
   $('#game-board').show()
-  console.log('Data is :', response)
 }
 
 const onErr = function (error) {
   $('#game-message').text('Error')
   $('#game-message').removeClass()
   $('#game-message').addClass('failure')
-  console.error('Error is :', error)
 }
 
 const winner = function () {
