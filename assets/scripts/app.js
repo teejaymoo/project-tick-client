@@ -10,8 +10,6 @@ const gameEvents = require('./game/gameEvents')
 $(() => {
   gameEvents.addHandlers()
 
-  $('#press-start-button').on('click', usersAuthEvents.pressStart)
-
   $('#view-games').on('click', usersAuthEvents.onViewGames)
 
   $('#close-view-games').on('click', usersAuthEvents.onCloseViewGames)

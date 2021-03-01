@@ -44,10 +44,6 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const pressStart = function () {
-  $('#ask-game').show()
-}
-
 const onUserInfoClicked = function () {
   event.preventDefault()
   ui.userInfo()
@@ -78,7 +74,6 @@ module.exports = {
   onSignOut,
   onViewGames,
   onCloseViewGames,
-  pressStart,
   onBackButtonPressed,
   onUserInfoClicked
 }
