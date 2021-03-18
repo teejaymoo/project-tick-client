@@ -10,7 +10,7 @@ const patch = function (response) {
   $('#game-board').show()
 }
 
-const onErr = function (error) {
+const onErr = function () {
   $('#game-message').text('Error')
   $('#game-message').removeClass()
   $('#game-message').addClass('failure')
@@ -30,7 +30,7 @@ const winner = function () {
 const draw = function () {
   store.gameOver = true
   $('#game-message').show()
-  $('#game-message').text('DRAW! Click \'Play Game\' to play again').show()
+  $('#game-message').text('DRAW! Click "Play Game" to play again').show()
 
   $(document).ready(function () {
     $('#game-message').delay(5000).fadeOut()
@@ -46,7 +46,7 @@ const invalidMove = function () {
 }
 
 const gameOver = function () {
-  $('#game-message').text('INVALID MOVE: Game Over - Click \'New Game\' to play again').show()
+  $('#game-message').text('INVALID MOVE: Game Over - Click "Play Game" to play again').show()
 
   setTimeout(function () {
     $('#game-message').hide()

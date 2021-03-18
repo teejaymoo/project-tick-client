@@ -110,6 +110,8 @@ const viewGames = function (response) {
     `
   })
   $('#game-display').html(gamesHtml)
+  $('#game-display').show()
+
 }
 
 const backButtonPressed = function () {
