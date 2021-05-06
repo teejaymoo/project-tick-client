@@ -44,16 +44,6 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const onUserInfoClicked = function () {
-  event.preventDefault()
-  ui.userInfo()
-}
-
-const onBackButtonPressed = function (event) {
-  event.preventDefault()
-  ui.backButtonPressed()
-}
-
 const onViewGames = function (event) {
   event.preventDefault()
   const form = event.target
@@ -62,18 +52,11 @@ const onViewGames = function (event) {
     .then(ui.viewGames)
     .catch(ui.onErr)
 }
-const onCloseViewGames = function () {
-  event.preventDefault()
-  $('#display-message').hide()
-}
 
 module.exports = {
   onSignUp,
   onLogIn,
   onChangePassword,
   onSignOut,
-  onViewGames,
-  onCloseViewGames,
-  onBackButtonPressed,
-  onUserInfoClicked
+  onViewGames
 }

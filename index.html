@@ -14,66 +14,82 @@
 
     <body>
       <main id="main">
-          <header>
-            <div class="container" id="header-container">
-              <div class="row" >
-                  <div class="container" id="ask-game">
-                    <button id="new-game">Play Game</button>
+        <div class="jumbotron">
+          <h1 class="display-4">Project-Tick</h1>
+          <form id="form-login">
+            <input class="col-6" autocomplete="on" spellcheck="true" name="credentials[email]" type="email" placeholder="Enter Email" required>
+            <input class="col-6" id="logIn-pw"autocomplete="on" spellcheck="true" name="credentials[password]" type="password" placeholder="Enter Password" required>
+            <button class="col-6 login-button">Login</button>
+          </form>
+          <form id="form-sign-up" >
+              <input class="col-6" name="credentials[email]" type="email" placeholder="Enter Email" required>
+              <input class="col-6" id="sign-up-pw" name="credentials[password]" type="password"  placeholder="Enter Password" required>
+              <input class="col-6" id="sign-up-confirm-pw" name="credentials[password_confirmation]" type="password"  placeholder="Confirm Password" required>
+              <button class="col-6 sign-up-button">Sign-Up</button>
+            </form>
+          <hr class="my-4">
+          <p class="lead">
+            <a class="btn btn-danger btn-lg" id="show-sign-up">Not a Member, Create an account</a>
+            <a class="btn btn-danger btn-lg" id="show-login">Member already, Login then</a>
+          </p>
+        </div>
+
+        <ul id="navBar" class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <button id="new-game" class="btn btn-primary btn-lg">Play Tic tac toe</button>
+          </li>
+          <li class="nav-item">
+            <!-- Button trigger modal -->
+            <button id="modal-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+              Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
-              </div>
-            </div>
-            <div>
-              <button id="user-info-button">User Info</button>
-              <button id="view-games">View Games</button>
-              <button id="close-view-games">Close view Games</button>
-              <button id="back-button">Back to Main</button>
-            </div>
-
-
-              <div class="container" id="user-info-container" >
-                <div class="row" >
-                  <div class="col" id="user-record">
-                    <div class="col" id="record-box">record</div>
-                      <form id="form-change-password">
+                  <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#game-display" role="tab" aria-controls="game-display" aria-selected="true">View all games</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="changePassword-tab" data-toggle="tab" href="#changePassword" role="tab" aria-controls="changePassword" aria-selected="false">Account</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="game-display-tabber" role="tabpanel" aria-labelledby="game-display-tab">
+                        <button id=view-games> view all games</button>
+                        <div id="game-display"></div>
+                      </div>
+                      <div class="tab-pane fade" id="changePassword" role="tabpanel" aria-labelledby="changePassword-tab">
                         <input class="col" id="current-pw" autocomplete="on" spellcheck="true" name="passwords[old]" type="password" placeholder="Enter Current Password" required>
-                        <input type="checkbox" onclick="showPw('current-pw')">Show Password
                         <input class="col" id="new-pw" autocomplete="on" spellcheck="true" name="passwords[new]" type="password" placeholder="Enter New Password" required>
-                        <input type="checkbox" onclick="showPw('new-pw')">Show Password<br>
                         <button id="save-changes">Save Changes</button>
-                      </form>
-                      <form>
-                        <button id="sign-out-button">Sign Out</button>
-                      </form>
+                        <form>
+                          <button id="sign-out-button">Sign Out</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
                   </div>
                 </div>
               </div>
-
-          </header>
-        <section id="Users-auth">
-          <div class="container" id="auth-container">
-            <div class="row" >
-              <form id="form-sign-up" >
-                <input class="col-6" name="credentials[email]" type="email" placeholder="Enter Email" required>
-                <input class="col-6" id="sign-up-pw" name="credentials[password]" type="password"  placeholder="Enter Password" required>
-                <input type="checkbox" onclick="showPw('sign-up-pw')">Show Password
-                <input class="col-6" id="sign-up-confirm-pw" name="credentials[password_confirmation]" type="password"  placeholder="Confirm Password" required>
-                <input type="checkbox" onclick="showPw('sign-up-confirm-pw')">Show Password
-                <button class="col-6 sign-up-button">Sign-Up</button>
-              </form>
-              <form id="form-login">
-                <input class="col-6" autocomplete="on" spellcheck="true" name="credentials[email]" type="email" placeholder="Enter Email" required>
-                <input class="col-6" id="logIn-pw"autocomplete="on" spellcheck="true" name="credentials[password]" type="password" placeholder="Enter Password" required>
-                <input type="checkbox" onclick="showPw('logIn-pw')">Show Password
-                <button class="col-6 login-button">Login</button>
-              </form>
             </div>
-          </div>
+          </li>
+        </ul>
 
-       </section>
+
        <section id="display-message">
            <!-- These divs are initially empty but we will fill them with success or failure message-->
            <div id="message"></div>
-           <div id="game-display"></div>
        </section>
 
        <section id="game-board">

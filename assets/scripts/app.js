@@ -12,17 +12,25 @@ $(() => {
 
   $('#view-games').on('click', usersAuthEvents.onViewGames)
 
-  $('#close-view-games').on('click', usersAuthEvents.onCloseViewGames)
-
   $('#form-sign-up').on('submit', usersAuthEvents.onSignUp)
 
   $('#form-login').on('submit', usersAuthEvents.onLogIn)
 
+  $('#show-sign-up').click(function () {
+    $('#form-sign-up').toggle('fast')
+    $('#form-login').toggle('fast')
+    $('#show-sign-up').toggle('fast')
+    $('#show-login').toggle('fast')
+  })
+
+  $('#show-login').click(function () {
+    $('#form-sign-up').toggle('fast')
+    $('#form-login').toggle('fast')
+    $('#show-login').toggle('fast')
+    $('#show-sign-up').toggle('fast')
+  })
+
   $('#form-change-password').on('submit', usersAuthEvents.onChangePassword)
-
-  $('#user-info-button').on('click', usersAuthEvents.onUserInfoClicked)
-
-  $('#back-button').on('click', usersAuthEvents.onBackButtonPressed)
 
   $('#sign-out-button').on('submit', usersAuthEvents.onSignOut)
 })

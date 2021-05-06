@@ -5,46 +5,48 @@ body {
  background-color: $color-scheme;
 }
 
-#view-games{
-  display: none;
+.jumbotron {
+  text-align: center;
+  background-color: $color-scheme-tint;
 }
-#close-view-games{
+
+#navBar {
+  display: none
+}
+
+#new-game {
+  background-color: $color-scheme-tint;
+  border-color: $color-scheme-tint;
+  color: $color-scheme;
+}
+#new-game:hover {
+  color: $color-scheme-tint;
+  background-color: $color-scheme;
+  border-color: $color-scheme;
+}
+
+#modal-button {
+  background-color: $color-scheme-tint;
+  border-color: $color-scheme-tint;
+  color: $color-scheme;
+}
+
+#modal-button:hover {
+  color: $color-scheme-tint;
+  background-color: $color-scheme;
+  border-color: $color-scheme;
+}
+
+#form-sign-up{
   display: none;
 }
 
-#header-container {
+#show-login {
   display: none;
-  margin: 10px 0px 0px 0;
-}
-
-#ask-game {
-  padding: 0px;
-}
-
-#back-button {
-  display: none;
-}
-
-#user-info-button {
-  display: none;
-}
-
-
-#user-info-container {
-  display: none;
-  border: 1px solid;
 }
 
 #game-section {
   display: none;
-}
-
-#auth-container {
-  margin: 10px 0px 0px 0;
-}
-
-#form-sign-up, #form-login {
-  margin: 10px 0px 0px 0px;
 }
 
 #game-message {

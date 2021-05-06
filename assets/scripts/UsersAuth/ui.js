@@ -38,10 +38,8 @@ const logInSuccess = function (response) {
   $('#form-sign-up').hide()
   $('#form-login').hide()
   $('h2').hide()
-  $('#Users-auth').hide()
-  $('#Whole-user-info').hide()
-  $('#header-container').show()
-  $('#user-info-button').show()
+  $('.jumbotron').hide()
+  $('#navBar').show()
 }
 
 const logInFailure = function (response) {
@@ -111,28 +109,6 @@ const viewGames = function (response) {
   })
   $('#game-display').html(gamesHtml)
   $('#game-display').show()
-
-}
-
-const backButtonPressed = function () {
-  $('#user-info-container').hide()
-  $('#back-button').hide()
-  $('#ask-game').hide()
-  $('#close-view-games').hide()
-  $('#view-games').hide()
-  $('#user-info-button').show()
-  $('#header-container').show()
-}
-
-const userInfo = function () {
-  $('#game-board').hide()
-  $('#header-container').hide()
-  $('#user-info-button').hide()
-  $('#user-info-container').show()
-  $('#back-button').show()
-  $('#view-games').show()
-  $('#close-view-games').show()
-  $('#display-message').show()
 }
 
 const onErr = function () {
@@ -150,7 +126,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   onErr,
-  viewGames,
-  backButtonPressed,
-  userInfo
+  viewGames
 }

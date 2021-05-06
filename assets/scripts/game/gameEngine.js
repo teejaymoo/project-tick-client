@@ -9,7 +9,7 @@ const restartGame = function () {
   store.playerXOrO = 'X'
   store.boxes.fill('')
   store.gameOver = false
-  $('.box').text('')
+  $('.cell').text('')
 }
 
 const playerChance = function () {
