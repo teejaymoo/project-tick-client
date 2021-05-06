@@ -12,7 +12,6 @@ const playGame = function () {
   })
 }
 
-
 const patchGame = function (index, value, over) {
   return $.ajax({
     url: config.apiUrl + `/games/${store.game._id}`,

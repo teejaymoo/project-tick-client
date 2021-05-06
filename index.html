@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/7k1wSfnstoNib_lmlfIfFTcHOE4oypb-mmuzvhPLpfFRz55CnNJFagyd6u6G4fFrlDI=s180-rw">
+      <link rel="shortcut icon" type="image/x-icon" href="project-tick.png">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -15,7 +15,7 @@
     <body>
       <main id="main">
         <div class="jumbotron">
-          <h1 class="display-4">Project-Tick</h1>
+          <img src="project-tick.png" alt="project-tick-logo">
           <form id="form-login">
             <input class="col-6" autocomplete="on" spellcheck="true" name="credentials[email]" type="email" placeholder="Enter Email" required>
             <input class="col-6" id="logIn-pw"autocomplete="on" spellcheck="true" name="credentials[password]" type="password" placeholder="Enter Password" required>
@@ -109,15 +109,5 @@
           </div>
         </section>
       </main>
-      <script> // function making passwords visible
-      function showPw(password) {
-        var pw = document.getElementById(password);
-        if (pw.type === "password") {
-          pw.type = "text";
-        } else {
-          pw.type = "password";
-        }
-      }
-      </script>
     </body>
 </html>
