@@ -2,21 +2,21 @@ const store = require('../store')
 const gameUi = require('./gameUi')
 
 store.boxes = ['', '', '', '', '', '', '', '', '']
-store.playerXOrO = 'X'
+store.playerXOrO = '✘'
 store.gameOver = false
 
 const restartGame = function () {
-  store.playerXOrO = 'X'
+  store.playerXOrO = '✘'
   store.boxes.fill('')
   store.gameOver = false
   $('.cell').text('')
 }
 
 const playerChance = function () {
-  if (store.playerXOrO === 'X') {
-    store.playerXOrO = 'O'
+  if (store.playerXOrO === '✘') {
+    store.playerXOrO = 'Ø'
   } else {
-    store.playerXOrO = 'X'
+    store.playerXOrO = '✘'
   }
 }
 const checkForWinner = function () {

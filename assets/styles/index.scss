@@ -75,4 +75,19 @@ body {
   border: 1px solid;
   height: 150px;
   width: 150px;
+  font-size: x-large;
+}
+
+@media only screen and (max-width: 380px) {
+  #logo-img {
+    max-width: 250px;
+  }
+  #show-login {
+    max-width: 250px;
+    font-size: 15px;
+  }
+  #show-sign-up {
+    max-width: 250px;
+    font-size: 15px;
+  }
 }
